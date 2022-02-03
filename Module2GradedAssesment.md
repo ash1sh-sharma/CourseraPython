@@ -230,8 +230,14 @@ The fractional_part function divides the numerator by the denominator, and retur
 ```
 def fractional_part(numerator, denominator):
 	# Operate with numerator and denominator to 
-	# keep just the fractional part of the quotient
-	return (numerator / denominator) % 1 if denominator else 0
+# keep just the fractional part of the quotient
+	if denominator==0:
+		return 0
+	elif numerator==0:
+		return 0
+	else:
+		return (numerator/denominator)%1
+
 
 print(fractional_part(5, 5)) # Should be 0
 print(fractional_part(5, 4)) # Should be 0.25
@@ -249,5 +255,5 @@ Output:
 0.6666666666666667
 0.5
 0
-0.0
+0
 ```
