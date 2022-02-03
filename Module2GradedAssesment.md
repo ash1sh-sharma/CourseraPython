@@ -125,7 +125,16 @@ Specifically:
 ```
 def format_name(first_name, last_name):
 	# code goes here
-	string = 'Name: ' + ', '.join([name for name in [last_name, first_name] if name]) if any([last_name, first_name]) else ''
+	if first_name== '' and last_name=='':
+		string=""
+		
+	elif last_name == "":
+		string = "Name: "+first_name
+	elif first_name=="":
+		string = "Name: "+last_name
+	else:
+		string = "Name: "+last_name+", "+first_name
+	
 	return string 
 
 print(format_name("Ernest", "Hemingway"))
